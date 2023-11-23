@@ -87,6 +87,7 @@ ol {
   flex-direction: column;
   gap: 5px;
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .search-form__fieldset-title {
@@ -110,6 +111,7 @@ ol {
   border-bottom: 1px solid #FFF;
   border-right: none;
   border-left: none;
+  flex-grow: 1;
   width: 225px;
   appearance: none;
   outline: none;
@@ -245,6 +247,7 @@ fieldset {
   overflow-y: auto;
   padding: 2px;
   position: relative;
+  flex-wrap: wrap;
 }
 
 .content__video-card {
@@ -255,6 +258,7 @@ fieldset {
   width: 394px;
   justify-content: space-between;
   padding: 2px;
+  flex-grow: 1;
 }
 
 .content__card-link {
