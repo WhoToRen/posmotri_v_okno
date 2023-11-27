@@ -78,15 +78,6 @@ img {
   justify-content: space-between;
 }
 
-.search-form__label {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: fit-content;
-  gap: 5px;
-  cursor: pointer;
-}
-
 .search-form__fieldset {
   display: flex;
   flex-direction: column;
@@ -104,8 +95,16 @@ img {
   line-height: normal;
 }
 
+.search-form__label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: fit-content;
+  gap: 5px;
+  cursor: pointer;
+}
+
 .search-form__textfield {
-  background-color: rgba(255, 255, 255, 0.7);
   font-family: "Fira Sans Condensed", sans-serif;
   color: #FFF;
   font-size: 18px;
@@ -113,22 +112,35 @@ img {
   font-weight: 400;
   line-height: normal;
   background-color: transparent;
-  border-top: 1px solid #FFF;
-  border-bottom: 1px solid #FFF;
-  border-right: none;
-  border-left: none;
+  border: 1px solid #FFF; 
+  border-right-color: transparent;
+  border-left-color: transparent;
   flex-grow: 1;
   width: 225px;
   appearance: none;
   outline: none;
 }
 
-.search-form__textfield:active {
-  outline: 1px solid #FFF;
-  border: transparent;
+.search-form__label:has(input[type="text"]):hover {
+  text-decoration: none;
+  border: none;
 }
 
-.search-form__textfield:focus-visible {
+.search-form__textfield:active {
+  outline: none; 
+  border-right-color: #FFF;
+  border-left-color: #FFF;
+}
+
+.search-form__label:has(.search-form__textfield:active) {
+  outline: none; 
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__textfield:has(:focus-visible) {
   outline: 1px solid #FFF;
   outline-offset: 1px;
 }
@@ -175,10 +187,6 @@ input[type="checkbox"]:active + .search-form__pseudo-checkbox::before {
 }
 
 input[type="checkbox"]:focus {
-  outline: none;
-}
-
-.search-form__label-text {
   outline: none;
 }
 
@@ -333,6 +341,10 @@ fieldset {
   height: 103px;
 }
 
+.content__card-link_current {
+  background-color: #545050;
+}
+
 .content__card-link:active {
   background-color: #545050;
 }
@@ -360,8 +372,4 @@ fieldset {
 .content__list-item:last-child {
   margin-bottom: 1px;
   margin-left: 1px;
-}
-
-.content__card-link_current {
-  background-color: #545050;
 }
